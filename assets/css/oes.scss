@@ -1,0 +1,136 @@
+/* Layout */
+
+.wp-site-blocks {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 0;
+}
+
+main {
+  flex: 1;
+}
+
+oestitle .oes-title-background {
+  height: calc(var(--wp--preset--font-size--medium));
+}
+
+header {
+  ul.wp-block-navigation-submenu .wp-block-navigation-link a {
+    padding: 5px 10px;
+  }
+}
+
+.only-print {
+  display: none;
+}
+
+/* Links */
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: .25em;
+}
+
+header {
+  a:hover {
+    color: var(--wp--preset--color--text-invert) !important;
+  }
+
+  .wp-block-oes-language-switch a.oes-switch-active {
+    color: var(--wp--preset--color--text-invert);
+    background-color: var(--wp--preset--color--text);
+    text-decoration: none;
+  }
+}
+
+main {
+  a.active,
+  .active > a {
+    color: var(--wp--preset--color--text-invert);
+    background-color: var(--wp--preset--color--text);
+    text-decoration: none;
+  }
+}
+
+.inactive,
+.inactive a {
+  color: var(--wp--preset--color--inactive);
+  text-decoration: none;
+  pointer-events: none;
+}
+
+oestitle a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.oes-note a {
+  text-decoration: none;
+}
+
+
+/* Header */
+
+.wp-block-site-logo a:hover {
+  background-color: unset;
+}
+
+/* Content */
+
+.oes-single-content {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block-start: 1.5rem;
+    margin-block-end: -.5rem;
+  }
+}
+
+.oes-popup__popup--tooltip {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block-start: 1em;
+    margin-block-end: .5rem;
+  }
+
+  .oes-lod-box-title h3 {
+    margin-block-start: 0;
+  }
+}
+
+.wp-block-oes-index {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block-start: 1.5em;
+    margin-block-end: 1rem;
+  }
+}
+
+/* Search */
+
+.wp-block-oes-search-panel input {
+  width: 50vw;
+}
+
+.oes-search-highlighted {
+  padding: 0 2px;
+  margin: 0 -2px;
+  background-color: var(--wp--preset--color--text);
+  color: var(--wp--preset--color--text-invert);
+}
+
+.oes-search-title-occurrences {
+  color: var(--wp--preset--color--inactive) !important;
+  font-size: .9rem;
+  padding-left: 5px;
+  white-space: nowrap;
+}

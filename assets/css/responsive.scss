@@ -1,0 +1,23 @@
+@media (max-width: 992px) {
+
+    .no-responsive {
+        display: none !important;
+    }
+
+    .no-padding-responsive {
+        padding: 0 !important;
+    }
+
+    .no-margin-responsive {
+        margin: 0 !important;
+    }
+
+    .reverse-order {
+        order: -1;
+    }
+
+    nav.is-responsive a {
+        text-transform: none !important;
+        font-size: large !important;
+    }
+}
