@@ -1,0 +1,27 @@
+@page {
+    margin: 0.5in;
+}
+
+@media print {
+
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+
+    .no-padding {
+        padding: 0 !important;
+    }
+
+    .no-margin {
+        margin: 0 !important;
+    }
+
+    .only-print {
+        display: block !important;
+    }
+
+    .print-black {
+        color: #111111 !important;
+    }
+}
