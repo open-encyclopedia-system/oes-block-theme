@@ -15,16 +15,16 @@ add_filter('document_title', 'oes__document_title');
 function oes__document_title(string $title): string
 {
     global $oes_post, $oes_term, $oes_archive_data;
-    if(!empty($oes_post)) return $oes_post->title;
-    elseif(!empty($oes_term)) return $oes_term->title;
-    elseif(!empty($oes_archive_data)) return $oes_archive_data['archive']['page_title'] ?? $title;
+    if (!empty($oes_post)) return $oes_post->title;
+    elseif (!empty($oes_term)) return $oes_term->title;
+    elseif (!empty($oes_archive_data)) return $oes_archive_data['archive']['page_title'] ?? $title;
     return $title;
 }
 
 
 /**
  * Modify the WordPress search to use OES Feature "Search".
- * 
+ *
  * @return void
  */
 function oes__after_setup_theme(): void
@@ -35,7 +35,7 @@ function oes__after_setup_theme(): void
 
 /**
  * Enqueue project scripts and styles.
- * 
+ *
  * @return void
  */
 function oes__theme_enqueue_scripts(): void
@@ -48,6 +48,8 @@ function oes__theme_enqueue_scripts(): void
 
     wp_register_style('oes-responsive', get_template_directory_uri() . '/assets/css/responsive.css');
     wp_enqueue_style('oes-responsive');
+
+    wp_enqueue_style('dashicons');
 
     wp_register_script('oes',
         get_template_directory_uri() . '/assets/js/oes.js',
@@ -68,8 +70,8 @@ function oes__redirect_template_parts(array $parsed_block): array
 {
     if ('core/template-part' === $parsed_block['blockName'] &&
         in_array($parsed_block['attrs']['slug'], ['header', 'footer'])) {
-            global $oes_language;
-            if ($oes_language != 'language0') $parsed_block['attrs']['slug'] .= '_' . $oes_language;
-        }
+        global $oes_language;
+        if ($oes_language != 'language0') $parsed_block['attrs']['slug'] .= '_' . $oes_language;
+    }
     return $parsed_block;
 }

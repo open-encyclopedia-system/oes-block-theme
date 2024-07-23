@@ -4,7 +4,7 @@
 	"customTemplates": [
 		{
 			"name": "single-article",
-			"title": "Single (Article)"
+			"title": "Single (Content)"
 		},
 		{
 			"name": "single-contributor",
@@ -78,6 +78,121 @@
 			"dropCap": false,
 			"fluid": true,
 			"fontFamilies": [
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Source Sans",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "900",
+							"src": [
+								"file:./assets/fonts/source-sans-pro/SourceSansPro-Black.otf"
+							]
+						},
+						{
+							"fontFamily": "Source Sans",
+							"fontStretch": "normal",
+							"fontStyle": "italic",
+							"fontWeight": "900",
+							"src": [
+								"file:./assets/fonts/source-sans-pro/SourceSansPro-BlackIt.otf"
+							]
+						},
+						{
+							"fontFamily": "Source Sans",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/source-sans-pro/SourceSansPro-Bold.otf"
+							]
+						},
+						{
+							"fontFamily": "Source Sans",
+							"fontStretch": "normal",
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/source-sans-pro/SourceSansPro-BoldIt.otf"
+							]
+						},
+						{
+							"fontFamily": "Source Sans",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "200",
+							"src": [
+								"file:./assets/fonts/source-sans-pro/SourceSansPro-ExtraLight.otf"
+							]
+						},
+						{
+							"fontFamily": "Source Sans",
+							"fontStretch": "normal",
+							"fontStyle": "italic",
+							"fontWeight": "200",
+							"src": [
+								"file:./assets/fonts/source-sans-pro/SourceSansPro-ExtraLightIt.otf"
+							]
+						},
+						{
+							"fontFamily": "Source Sans",
+							"fontStretch": "normal",
+							"fontStyle": "italic",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/source-sans-pro/SourceSansPro-It.otf"
+							]
+						},
+						{
+							"fontFamily": "Source Sans",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "300",
+							"src": [
+								"file:./assets/fonts/source-sans-pro/SourceSansPro-Light.otf"
+							]
+						},
+						{
+							"fontFamily": "Source Sans",
+							"fontStretch": "normal",
+							"fontStyle": "italic",
+							"fontWeight": "300",
+							"src": [
+								"file:./assets/fonts/source-sans-pro/SourceSansPro-LightIt.otf"
+							]
+						},
+						{
+							"fontFamily": "Source Sans",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/source-sans-pro/SourceSansPro-Regular.otf"
+							]
+						},
+						{
+							"fontFamily": "Source Sans",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"src": [
+								"file:./assets/fonts/source-sans-pro/SourceSansPro-Semibold.otf"
+							]
+						},
+						{
+							"fontFamily": "Source Sans",
+							"fontStretch": "normal",
+							"fontStyle": "italic",
+							"fontWeight": "600",
+							"src": [
+								"file:./assets/fonts/source-sans-pro/SourceSansPro-SemiboldIt.otf"
+							]
+						}
+					],
+					"fontFamily": "\"Source Sans Pro\"",
+					"name": "Source Sans",
+					"slug": "source-sans"
+				},
 				{
 					"fontFace": [
 						{
@@ -350,7 +465,7 @@
 			}
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--noto-sans)",
+			"fontFamily": "var(--wp--preset--font-family--source-sans)",
 			"fontSize": "var(--wp--preset--font-size--medium)",
 			"lineHeight": "1.75"
 		}
