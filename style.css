@@ -1,11 +1,16 @@
 /**
- * Theme Name:   OES Block
- * Description:  Exemplary Block Theme for the OES Project Plugin
- * Version: 1.0.2
- * Author: Maren Welterlich-Strobl, Freie Universität Berlin, Center für Digitale Systeme an der Universitätsbibliothek
- * Author URI: https://www.cedis.fu-berlin.de/cedis/mitarbeiter/beschaeftigte/mstrobl.html
- * License: GPLv2 or later
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Theme Name:        OES Block
+ * Theme URI:         https://www.open-encyclopedia-system.org/
+ * Description:       Exemplary Block Theme for the OES Project Plugin.
+ * Version:           1.1.0
+ * Author:            Maren Welterlich-Strobl, Freie Universität Berlin, FUB-IT
+ * Author URI:        https://www.it.fu-berlin.de/die-fub-it/mitarbeitende/mstrobl.html
+ * Requires at least: 6.5
+ * Tested up to:      6.8.2
+ * Requires PHP:      8.1
+ * Tags:              oes, block-theme, full-site-editing, education, accessibility-ready
+ * License:           GPLv2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -19,5 +24,5 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */

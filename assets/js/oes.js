@@ -37,7 +37,7 @@ jQuery(document).ready(function () {
 });
 
 /* Responsive --------------------------------------------------------------------------------------------------------*/
-if (jQuery(window).width() < 992) {
+if (jQuery(window).width() < 600) {
 
     /* swap navigation */
     const utility = jQuery('ul.oes-utility-nav'),
