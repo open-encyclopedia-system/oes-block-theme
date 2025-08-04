@@ -16,6 +16,7 @@ oestitle .oes-title-background {
 }
 
 header {
+  z-index: 500; // to be on top of maps etc.
   ul.wp-block-navigation-submenu .wp-block-navigation-link a {
     padding: 5px 10px;
   }
@@ -30,6 +31,10 @@ header {
 a {
   text-decoration-thickness: 1px;
   text-underline-offset: .25em;
+}
+
+a:focus {
+  outline: 2px solid var(--wp--preset--color--text);
 }
 
 header {
@@ -133,4 +138,20 @@ oestitle a {
   font-size: .9rem;
   padding-left: 5px;
   white-space: nowrap;
+}
+
+/* two-columns archive */
+
+@media (min-width: 992px) {
+  .oes-2-col-archive {
+    .oes-alphabet-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .oes-post-filter-wrapper {
+      margin: 0;
+    }
+  }
 }
