@@ -7,7 +7,7 @@ For more information, please visit the [main repository](https://github.com/open
 A typical OES application consists of:
 - the **OES Core plugin**
 - a **project-specific OES plugin** that implements application-specific features
-- optional **OES modules**, 
+- optional **OES modules**,
 - optional **OES theme**, such as this theme.
 
 The **OES Block Theme** serves as an exemplary block theme designed for an OES project plugin.
@@ -49,10 +49,3 @@ License as published by the Free Software Foundation; either version 2 of the Li
 version.
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
 warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-
-# Changelog
-
-### 1.1.0
-- remove Nexus Font (no longer under licence)
-- small css improvements
-- add two-columns archive option

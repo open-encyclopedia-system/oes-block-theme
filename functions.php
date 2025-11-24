@@ -35,12 +35,28 @@ function oes__theme_enqueue_scripts(): void
 
     wp_enqueue_style('dashicons');
 
+    $minify = oes_minify();
+
     wp_register_script('oes',
-        get_template_directory_uri() . '/assets/js/oes.js',
+        get_template_directory_uri() . '/assets/js/oes' . $minify . '.js',
         ['jquery'],
         false,
         true);
     wp_enqueue_script('oes');
+
+    wp_register_script('oes-print',
+        get_template_directory_uri() . '/assets/js/print' . $minify . '.js',
+        ['jquery'],
+        false,
+        true);
+    wp_enqueue_script('oes-print');
+
+    wp_register_script('oes-responsive',
+        get_template_directory_uri() . '/assets/js/responsive' . $minify . '.js',
+        ['jquery'],
+        false,
+        true);
+    wp_enqueue_script('oes-responsive');
 }
 
 /**
