@@ -1,4 +1,4 @@
-jQuery(document).ready(function () {
+document.addEventListener("DOMContentLoaded", () => {
 
     const currentUrl = new URL(window.location.href);
     const viewParam = currentUrl.searchParams.get("view");
@@ -16,38 +16,45 @@ jQuery(document).ready(function () {
     }
 
     // Highlight links of the current page
-    jQuery("[href]").each(function () {
-        if (this.id !== 'oes-search' &&
-            this.href === location.protocol + '//' + location.host + location.pathname) {
-            jQuery(this).addClass("active");
-            if(jQuery(this.parentElement).is('li')) jQuery(this.parentElement).addClass("active");
+    const baseUrl = location.protocol + '//' + location.host + location.pathname;
+    for (const el of document.querySelectorAll("[href]")) {
+        if (el.id === 'oes-search') continue;
+
+        if (el.href === baseUrl) {
+            el.classList.add("active");
+            if (el.parentElement?.tagName === 'LI') {
+                el.parentElement.classList.add("active");
+            }
         }
-        if(this.href === location.href) {
-            jQuery(this).addClass("current");
-            if(jQuery(this.parentElement).is('li')) jQuery(this.parentElement).addClass("current");
+        if (el.href === location.href) {
+            el.classList.add("current");
+            if (el.parentElement?.tagName === 'LI') {
+                el.parentElement.classList.add("current");
+            }
         }
-    });
+    }
 
     // Autofocus and position caret in search input
-    const search_box = document.getElementById('s'),
-        caret_post = 10;
-    if (search_box) {
-        if (search_box.createTextRange) {
-            const range = search_box.createTextRange();
-            range.move('character', caret_post);
+    const searchBox = document.getElementById('s');
+    const caretPos = 10;
+    if (searchBox) {
+        if (searchBox.createTextRange) {
+            const range = searchBox.createTextRange();
+            range.move('character', caretPos);
             range.select();
         } else {
-            if (search_box.selectionStart) {
-                search_box.focus();
-                search_box.setSelectionRange(caret_post, caret_post);
-            } else
-                search_box.focus();
+            searchBox.focus();
+            if (searchBox.selectionStart !== undefined) {
+                searchBox.setSelectionRange(caretPos, caretPos);
+            }
         }
     }
 
     // Accordion toggles
-    jQuery(".oes-accordion").on("click", function (event) {
-        this.classList.toggle("active");
-        this.nextElementSibling.classList.toggle("active");
-    });
+    for (const accordion of document.querySelectorAll(".oes-accordion")) {
+        accordion.addEventListener("click", () => {
+            accordion.classList.toggle("active");
+            accordion.nextElementSibling?.classList.toggle("active");
+        });
+    }
 });

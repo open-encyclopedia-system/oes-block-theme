@@ -133,5 +133,20 @@ oestitle a {
     margin: 0;
   }
 }
+/* Update for OES 3.0 (some block styling changed) */
+/* Archive */
+.oes-filter-item-count:before {
+  content: "(";
+}
+
+.oes-filter-item-count:after {
+  content: ")";
+}
+
+ul.oes-filter-list-container .oes-filter-list {
+  padding-bottom: 1rem;
+  padding-left: 14px;
+  padding-top: 1rem;
+}
 
 /*# sourceMappingURL=oes.css.map */

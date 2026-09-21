@@ -20,17 +20,18 @@ window.matchMedia("print").addEventListener("change", evt => {
     if (evt.matches) {
         let gallery = document.body.querySelectorAll(".oes-panel-container-gallery");
         for (let g of gallery) {
-            let slider = jQuery(g).find('.oes-figure-slider-panel');
-            for (let s of slider) {
+            let sliders = g.querySelectorAll('.oes-figure-slider-panel');
+            for (let s of sliders) {
                 for (let item of s.children) {
-                    let itemImg = jQuery(item).find('img').get(0);
+                    let itemImg = item.querySelector('img');
                     if (itemImg) {
                         const imgID = itemImg.dataset.id;
-                        let figcaption = jQuery(g).find('.oes-panel-figcaption-' + imgID).get(0);
-                        let newFigcaption = figcaption.cloneNode(true);
-                        jQuery(newFigcaption).addClass('active');
-                        jQuery(newFigcaption).addClass('oes-gallery-print');
-                        item.append(newFigcaption);
+                        let figcaption = g.querySelector('.oes-panel-figcaption-' + imgID);
+                        if (figcaption) {
+                            let newFigcaption = figcaption.cloneNode(true);
+                            newFigcaption.classList.add('active', 'oes-gallery-print');
+                            item.append(newFigcaption);
+                        }
                     }
                 }
             }

@@ -3,14 +3,8 @@
 <!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"bottom":"6rem"}}}} -->
 <main class="wp-block-group" style="padding-bottom:6rem"><!-- wp:template-part {"slug":"title","tagName":"oestitle"} /-->
 
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-top:1rem;padding-bottom:1rem"><!-- wp:oes/title {"style":{"spacing":{"padding":{"top":"0rem"}}}} /-->
-
-<!-- wp:oes/author-byline {"labels":{"language0":"by","language1":"von"}} /-->
-
-<!-- wp:oes/version-info {"className":"is-style-oes-default","style":{"spacing":{"margin":{"top":"0rem"}}}} /-->
-
-<!-- wp:oes/translation {"labels":{"language0":"Other language version: ","language1":"Andere Sprachversion: "}} /--></div>
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:oes/title {"style":{"spacing":{"padding":{"top":"1rem","bottom":"0"}}}} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
@@ -22,21 +16,21 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:oes/table-of-contents {"labels":{"language0":"Table of Contents","language1":"Inhaltsverzeichnis"}} /-->
-
-<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
-
-<!-- wp:oes/notes {"labels":{"language0":"Notes","language1":"Endnoten"}} /-->
-
-<!-- wp:oes/literature /--></div>
+<!-- wp:group {"style":{"typography":{"fontStyle":"normal","fontWeight":"700"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="font-style:normal;font-weight:700"><!-- wp:shortcode -->
+[oes_field field="field_demo_event__time_start;field_demo_event__time_end" separator=" – "]
+<!-- /wp:shortcode --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"2rem"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-top:2rem"><!-- wp:oes/citation {"labels":{"language0":"Citation","language1":"Zitierweise"}} /-->
+<!-- wp:post-content /-->
 
-<!-- wp:oes/metadata {"labels":{"language0":"Metadata","language1":"Metadaten"},"className":"is-style-oes-default"} /--></div>
-<!-- /wp:group --></div>
+<!-- wp:oes/field {"field":"field_demo_event__description"} /-->
+
+<!-- wp:oes/field {"field":"field_demo_event__source","header":{"language0":"Quellen","language1":"Sources"}} /-->
+
+<!-- wp:oes/metadata {"labels":{"language0":"Details","language1":"Details"},"className":"is-style-oes-default"} /-->
+
+<!-- wp:oes/index {"post_type":"demo_article","language":"current","labels":{"language0":"Referred to in","language1":"Erwähnt in"},"className":"is-style-oes-simple"} /--></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"33.33%"} -->
@@ -45,14 +39,8 @@
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"no-padding no-padding-responsive oes-single-sidebar","style":{"spacing":{"padding":{"left":"1rem"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group no-padding no-padding-responsive oes-single-sidebar" style="padding-left:1rem"><!-- wp:oes/terms {"labels":{"language0":"Keywords","language1":"Schlagworte"},"className":"is-style-box"} /-->
-
-<!-- wp:oes/featured-image {"labels":{"language0":"Featured Image","language1":"Featured Image"}} /-->
-
-<!-- wp:oes/timeline-single {"labels":{"language0":"Timeline","language1":"Zeitleiste"},"textColor":"text"} /-->
-
-<!-- wp:oes/print {"labels":{"language0":"Print","language1":"Drucken"},"className":"oes-uppercase"} -->
-<p class="wp-block-oes-print oes-uppercase"><a href="javascript:void(0);" onclick="window.print();" class="oes-print-button no-print"><span class="dashicons dashicons-printer"></span>[oes_language_label language0="Print" language1="Drucken" ]</a></p>
+<div class="wp-block-group no-padding no-padding-responsive oes-single-sidebar" style="padding-left:1rem"><!-- wp:oes/print {"labels":{"language0":"Print","language1":"Drucken"}} -->
+<p class="wp-block-oes-print"><a href="javascript:void(0);" onclick="window.print();" class="oes-print-button no-print"><span class="dashicons dashicons-printer"></span>[oes_language_label language0="Print" language1="Drucken" ]</a></p>
 <!-- /wp:oes/print --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
