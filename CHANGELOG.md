@@ -1,5 +1,8 @@
-
 # Changelog
+
+## 1.2
+- remove jQuery
+- clean up
 
 ## 1.1.1
 - clean up javascript
