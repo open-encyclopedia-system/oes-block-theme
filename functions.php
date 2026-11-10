@@ -11,7 +11,7 @@ add_filter('render_block_data', 'oes_redirect_template_parts');
  */
 function oes__after_setup_theme(): void
 {
-    if(!function_exists('OES')) {
+    if (!function_exists('OES')) {
         return;
     }
 
@@ -27,37 +27,77 @@ function oes__after_setup_theme(): void
  */
 function oes__theme_enqueue_scripts(): void
 {
-    wp_register_style('oes', get_template_directory_uri() . '/assets/css/oes.css');
-    wp_enqueue_style('oes');
-
-    wp_register_style('oes-print', get_template_directory_uri() . '/assets/css/print.css');
-    wp_enqueue_style('oes-print');
-
-    wp_register_style('oes-responsive', get_template_directory_uri() . '/assets/css/responsive.css');
-    wp_enqueue_style('oes-responsive');
+    oes__theme_enqueue_style('oes');
+    oes__theme_enqueue_style('print');
+    oes__theme_enqueue_style('responsive');
 
     wp_enqueue_style('dashicons');
 
     $minify = function_exists('oes_minify') ? oes_minify() : true;
 
-    wp_register_script('oes',
-        get_template_directory_uri() . '/assets/js/oes' . $minify . '.js',
-        [],
-        false,
-        true);
-    wp_enqueue_script('oes');
+    oes__theme_enqueue_script('oes', $minify);
+    oes__theme_enqueue_script('print', $minify);
+    oes__theme_enqueue_script('responsive', $minify);
+}
 
-    wp_register_script('oes-print',
-        get_template_directory_uri() . '/assets/js/print' . $minify . '.js',
-        [],
-        false,
-        true);
-    wp_enqueue_script('oes-print');
+/**
+ * Enqueue a single style.
+ *
+ * @param string $fileName
+ * @param string $prefix
+ * @return void
+ */
+function oes__theme_enqueue_style(string $fileName, string $prefix = ''): void
+{
+    $assets = oes__theme_resolve_asset('css', $fileName, '', $prefix);
 
-    wp_register_script('oes-responsive',
-        get_template_directory_uri() . '/assets/js/responsive' . $minify . '.js',
+    wp_enqueue_style(
+        $assets['handle'],
+        $assets['url'],
         [],
-        false,
-        true);
-    wp_enqueue_script('oes-responsive');
+        $assets['version']);
+}
+
+/**
+ * Enqueue a single script.
+ *
+ * @param string $fileName
+ * @param string $minify
+ * @param string $prefix
+ * @return void
+ */
+function oes__theme_enqueue_script(string $fileName, string $minify, string $prefix = ''): void
+{
+    $assets = oes__theme_resolve_asset('js', $fileName, $minify, $prefix);
+
+    wp_enqueue_script(
+        $assets['handle'],
+        $assets['url'],
+        [],
+        $assets['version'],
+        true
+    );
+}
+
+/**
+ * Resolve a theme asset.
+ *
+ * @param string $type Asset directory and extension: 'css' or 'js'.
+ * @param string $name Asset base name without extension.
+ * @param string $suffix Suffix such as '.min', or ''.
+ * @return array{url: string, version: string|false} URL and cache-busting version.
+ */
+function oes__theme_resolve_asset(string $type, string $name, string $suffix = '', string $prefix = ''): array
+{
+    $handle = ($name == 'oes') ? 'oes' : ('oes-' . $prefix. $name);
+    $relative = "/assets/{$type}/{$name}{$suffix}.{$type}";
+
+    $filePath = get_theme_file_path($relative);
+    $fileUrl  = get_theme_file_uri($relative);
+
+    return [
+        'handle'  => $handle,
+        'url'     => $fileUrl,
+        'version' => file_exists($filePath) ? filemtime($filePath) : false,
+    ];
 }

@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.1
+- add version info to styles and scripts
+
 ## 1.2
 - remove jQuery
 - clean up
